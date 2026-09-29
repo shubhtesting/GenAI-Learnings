@@ -1,6 +1,5 @@
 import os
 from openai import OpenAI, RateLimitError
-from dotenv import load_dotenv
 from phase_1_prep.chatgpt.chatbot.config import SYSTEM_PROMPT, MODEL_NAME, MEMORY_LIMIT, LOG_FILE
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -9,9 +8,6 @@ LOG_FILE = os.path.join(LOG_DIR, "chat.log")
 
 os.makedirs(LOG_DIR, exist_ok=True)
 
-# Load API Key
-load_dotenv()
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 # Log function to save conversation
 def log_message(role, content):

@@ -1,1 +1,5 @@
+## Export api key in terminal
+$env:GEMINI_API_KEY="Add key here"
+
+## Check found/notfound
 python -c "import os; print('FOUND' if os.getenv('GEMINI_API_KEY') else 'NOT FOUND')"
